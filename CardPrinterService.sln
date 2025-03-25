@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardPrinterService", "CardPrinterService\CardPrinterService.csproj", "{51A708ED-7610-4B44-9F73-4FF0368F45A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hardware", "Hardware\Hardware.csproj", "{7013B938-D822-441E-B250-A29651F61A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkAdapter", "NetworkAdapter\NetworkAdapter.csproj", "{ECB66DCD-42A7-437B-8B40-B11DCAEC42F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{496AA64E-7E1C-4A09-9725-4B7412A73AE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51A708ED-7610-4B44-9F73-4FF0368F45A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A708ED-7610-4B44-9F73-4FF0368F45A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A708ED-7610-4B44-9F73-4FF0368F45A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A708ED-7610-4B44-9F73-4FF0368F45A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7013B938-D822-441E-B250-A29651F61A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7013B938-D822-441E-B250-A29651F61A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7013B938-D822-441E-B250-A29651F61A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7013B938-D822-441E-B250-A29651F61A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECB66DCD-42A7-437B-8B40-B11DCAEC42F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB66DCD-42A7-437B-8B40-B11DCAEC42F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB66DCD-42A7-437B-8B40-B11DCAEC42F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB66DCD-42A7-437B-8B40-B11DCAEC42F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
