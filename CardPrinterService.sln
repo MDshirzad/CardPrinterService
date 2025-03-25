@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkAdapter", "NetworkAd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{496AA64E-7E1C-4A09-9725-4B7412A73AE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHandler", "MessageHandler\MessageHandler.csproj", "{B45BD4DB-D59B-4D5B-97B5-85E4BA53EB11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{5EB6279F-6069-4053-BE16-31471FA14DA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{496AA64E-7E1C-4A09-9725-4B7412A73AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B45BD4DB-D59B-4D5B-97B5-85E4BA53EB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B45BD4DB-D59B-4D5B-97B5-85E4BA53EB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B45BD4DB-D59B-4D5B-97B5-85E4BA53EB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B45BD4DB-D59B-4D5B-97B5-85E4BA53EB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

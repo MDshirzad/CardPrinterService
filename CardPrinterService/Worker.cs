@@ -1,4 +1,5 @@
 using Logging;
+using MessageHandler;
 using NetworkAdapter;
 
 namespace CardPrinterService
@@ -7,10 +8,12 @@ namespace CardPrinterService
     {
         private readonly ILogger<Worker> _logger;
         private readonly INotifierService notifierService;
-        public Worker(ILogger<Worker> logger, INotifierService notifierService)
+        private readonly IMessageParser messageParser;
+        public Worker(ILogger<Worker> logger, INotifierService notifierService,IMessageParser messageParser)
         {
             _logger = logger;
             this.notifierService = notifierService;
+            this.messageParser = messageParser;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -28,6 +31,13 @@ namespace CardPrinterService
         private void InitializeService()
         {
              notifierService.StartServer();
+            notifierService.OnRecievedMessage += NotifierService_OnRecievedMessage;
+        }
+
+        private void NotifierService_OnRecievedMessage(string recievedMessage)
+        {
+            var result = messageParser.ParseMessage(recievedMessage);
+            notifierService.SendMessage(result!.ToString()!);
         }
     }
 }

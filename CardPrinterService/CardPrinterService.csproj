@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Hardware\Hardware.csproj" />
     <ProjectReference Include="..\Logging\Logging.csproj" />
+    <ProjectReference Include="..\MessageHandler\MessageHandler.csproj" />
     <ProjectReference Include="..\NetworkAdapter\NetworkAdapter.csproj" />
   </ItemGroup>
 </Project>
