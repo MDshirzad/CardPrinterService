@@ -12,6 +12,7 @@ namespace MessageHandler
         public static void AddMessageHandlerServices(this IServiceCollection services)
         {
             services.AddSingleton<IMessageParser, MessageParser>();
+            services.AddSingleton<IParser, CodeBaseMessageParser>();
 
         }
     }
