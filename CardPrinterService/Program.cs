@@ -7,7 +7,7 @@ using NetworkAdapter;
 var builder = Host.CreateApplicationBuilder(args);
 if (!builder.Environment.IsDevelopment())
 {
-     builder.Services.AddSingleton<IHostLifetime, WindowsServiceLifetime>();
+    builder.Services.AddSingleton<IHostLifetime, WindowsServiceLifetime>();
 }
 builder.Services.AddHostedService<Worker>();
 builder.Services.AddHardwareServices();

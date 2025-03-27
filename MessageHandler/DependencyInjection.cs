@@ -1,9 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using MessageHandler.Contracts;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MessageHandler
 {
@@ -13,6 +10,14 @@ namespace MessageHandler
         {
             services.AddSingleton<IMessageParser, MessageParser>();
             services.AddSingleton<IParser, CodeBaseMessageParser>();
+            var assembly = typeof(DependencyInjection).Assembly;
+            services.AddMediatR(c =>
+            {
+                c.RegisterServicesFromAssembly(assembly);
+
+            });
+
+
 
         }
     }

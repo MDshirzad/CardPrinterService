@@ -1,5 +1,5 @@
 using Logging;
-using MessageHandler;
+using MessageHandler.Contracts;
 using NetworkAdapter;
 
 namespace CardPrinterService
@@ -9,7 +9,7 @@ namespace CardPrinterService
         private readonly ILogger<Worker> _logger;
         private readonly INotifierService notifierService;
         private readonly IMessageParser messageParser;
-        public Worker(ILogger<Worker> logger, INotifierService notifierService,IMessageParser messageParser)
+        public Worker(ILogger<Worker> logger, INotifierService notifierService, IMessageParser messageParser)
         {
             _logger = logger;
             this.notifierService = notifierService;
@@ -22,7 +22,7 @@ namespace CardPrinterService
             LogWriter.WriteDebugInfo("Service Started");
             while (!stoppingToken.IsCancellationRequested)
             {
-                
+
                 await Task.Delay(1000, stoppingToken);
             }
             LogWriter.WriteDebugInfo("Service Stopping");
@@ -30,13 +30,13 @@ namespace CardPrinterService
 
         private void InitializeService()
         {
-             notifierService.StartServer();
+            notifierService.StartServer();
             notifierService.OnRecievedMessage += NotifierService_OnRecievedMessage;
         }
 
-        private void NotifierService_OnRecievedMessage(string recievedMessage)
+        private async Task NotifierService_OnRecievedMessage(string recievedMessage)
         {
-            var result = messageParser.ParseMessage(recievedMessage);
+            var result = await messageParser.ParseMessage(recievedMessage);
             notifierService.SendMessage(result!.ToString()!);
         }
     }

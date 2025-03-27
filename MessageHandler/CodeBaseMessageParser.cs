@@ -1,10 +1,7 @@
-﻿using MessageHandler.Exceptions;
+﻿using MessageHandler.Contracts;
+using MessageHandler.Exceptions;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace MessageHandler
 {
@@ -12,26 +9,49 @@ namespace MessageHandler
     {
         public object Parse(string input)
         {
-            
+
             var code = input.Substring(0, 3);
             input = input.Remove(0, 3);
+            var classType = GetTypeByCommand(code);
+            if (classType == null)
+                throw new JsonParserException("Invalid Code");
             try
-            { 
-            var result =  JsonConvert.DeserializeObject(input);
-            if (result == null)
+            {
+                var jsonObject = JsonConvert.DeserializeObject<JObject>(input);
+
+                if (jsonObject == null)
                     throw new ArgumentNullException();
-                return result;
+
+                var resultMap = jsonObject.ToObject(classType);
+                return resultMap;
             }
             catch (ArgumentNullException)
-           
+
             {
                 throw new JsonParserException();
             }
-           catch
+            catch
             {
-                
+
                 throw new UnHandledException();
             }
+        }
+
+
+        Type? GetTypeByCommand(string code)
+        {
+            return code switch
+            {
+                "960" => typeof(fakecomand),
+
+                _ => throw new Exception("Invalid Command")
+            };
+
+            //var type = Assembly.GetExecutingAssembly()
+            //    .GetTypes()
+            //    .FirstOrDefault(t => t.Name.Equals(className, StringComparison.OrdinalIgnoreCase) && typeof(IRequest).IsAssignableFrom(t));
+            //return type;
+
         }
     }
 }
