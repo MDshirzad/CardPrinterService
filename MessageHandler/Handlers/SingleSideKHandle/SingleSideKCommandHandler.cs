@@ -4,9 +4,9 @@ using MessageHandler.Contracts;
 
 namespace MessageHandler.Handlers.SingleSideKHandle
 {
-    internal class SingleSideKCommandHandler(IUsbPrinter usbPrinter) : ICommandHandler<SingleSideK>
+    internal class SingleSideKCommandHandler(IUsbPrinter usbPrinter) : ICommandHandler<SingleSideKCommand>
     {
-        public async Task<Result<MessageResult>> Handle(SingleSideK request, CancellationToken cancellationToken)
+        public async Task<Result<MessageResult>> Handle(SingleSideKCommand request, CancellationToken cancellationToken)
         {
             Result result = default;
             if (request.WriteTrack)
