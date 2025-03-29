@@ -1,8 +1,10 @@
-﻿namespace Hardware.Printer.Evolis.Contracts
+﻿using Hardware.Printer.Contracts;
+
+namespace Hardware.Printer.Evolis.Contracts
 {
-    public interface IEvolisPrinter : IRibbonPrinter, IMagnWriter
+    public interface IEvolisPrinter : IPrinter
     {
 
-        public void ExecutePrinterCommand(string command);
+      
     }
 }

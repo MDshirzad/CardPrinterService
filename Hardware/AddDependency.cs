@@ -1,5 +1,7 @@
 ﻿
 using Hardware.Printer;
+using Hardware.Printer.Contracts;
+using Hardware.Printer.Evolis;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Hardware
@@ -8,7 +10,7 @@ namespace Hardware
     {
         public static void AddHardwareServices(this IServiceCollection services)
         {
-            services.AddSingleton<IPrinterFactory, PrinterFactory>();
+                services.AddSingleton<IUsbPrinter, USBEvolisPrinter>();
 
         }
     }

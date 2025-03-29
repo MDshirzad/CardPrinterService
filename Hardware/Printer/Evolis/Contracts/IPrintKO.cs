@@ -1,8 +1,10 @@
-﻿namespace Hardware.Printer.Evolis.Contracts
+﻿using CSharpFunctionalExtensions;
+
+namespace Hardware.Printer.Evolis.Contracts
 {
     public interface IPrintKO
     {
-        void Print_SingleSide_KO();
-        void Print_DoubleSide_KO();
+        Result Print_SingleSide_KO(string printerName);
+        Result Print_DoubleSide_KO(string printerName);
     }
 }

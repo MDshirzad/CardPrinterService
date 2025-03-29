@@ -1,47 +1,88 @@
-﻿using Hardware.Printer.Evolis.Contracts;
+﻿using CSharpFunctionalExtensions;
+using Hardware.Printer.Evolis.Contracts;
 
 namespace Hardware.Printer.Evolis
 {
     internal class USBEvolisPrinter : IEvolisUsbPrinter
     {
-        public void ExecutePrinterCommand(string command)
+        EVOLIS_CLASS.USB usbPrinter = new EVOLIS_CLASS.USB();
+        public Result<string> ExecutePrinterCommand(string printerName,string command)
         {
-            throw new NotImplementedException();
+             return     usbPrinter.RunEvolisCommand(printerName, command);
         }
 
-        public void Print_DoubleSide_K()
+        public Result Print_DoubleSide_K(string printerName)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.K_PrintingDoubleSide(printerName,"","","");
+            if(IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
+
         }
 
-        public void Print_DoubleSide_KO()
+        public Result Print_DoubleSide_KO(string printerName)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.KO_PrintingDoubleSide(printerName, "", "", "","");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
         }
 
-        public void Print_DoubleSide_YMCKO()
+        public Result Print_DoubleSide_YMCKO(string printerName)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.YMCKO_PrintingDoubleSide(printerName, "", "", "","","","","");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
         }
 
-        public void Print_SingleSide_K()
+        public Result Print_SingleSide_K(string printerName)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.KO_PrintingSingleSide(printerName, "", "");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
         }
 
-        public void Print_SingleSide_KO()
+        public Result Print_SingleSide_KO(string printerName  )
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.KO_PrintingSingleSide(printerName, "", "");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
         }
 
-        public void Print_SingleSide_YMCKO()
+        public Result Print_SingleSide_YMCKO(string printerName)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.YMCKO_PrintingSingleSide(printerName, "", "", "", "");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
         }
 
-        public void WriteMagn(string Track1, string Track2, string Track3)
+        public Result WriteMagn(string PrinterName,string Track1, string Track2, string Track3)
         {
-            throw new NotImplementedException();
+            var result = usbPrinter.RunEvolisCommand(PrinterName, "Dm;1;" + Track1.ToUpper());
+            if (IsSuccess(result))
+            {   
+                    result = usbPrinter.RunEvolisCommand(PrinterName, "Dm;2;" + Track2.ToUpper());
+                    if (IsSuccess(result))
+                    {
+                            result = usbPrinter.RunEvolisCommand(PrinterName, "Dm;3;" + Track3.ToUpper());
+                            if (IsSuccess(result))
+                            {
+                        result = usbPrinter.RunEvolisCommand(PrinterName, "Smw" );
+                        if (IsSuccess(result))
+                        { 
+                            return Result.Success();
+                        }
+                    }
+                    }
+             }
+            return Result.Failure(result);
         }
+
+
+        private bool IsSuccess(string result) => result.Equals("ok",StringComparison.CurrentCultureIgnoreCase) || result.Equals("done",StringComparison.CurrentCultureIgnoreCase) ? true : false;
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace Hardware.Printer.Evolis.Contracts
+﻿using Hardware.Printer.Contracts;
+
+namespace Hardware.Printer.Evolis.Contracts
 {
-    internal interface IEvolisUsbPrinter : IEvolisPrinter
+    public interface IEvolisUsbPrinter : IEvolisPrinter, IUsbPrinter
     {
     }
 }

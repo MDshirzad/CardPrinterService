@@ -1,6 +1,6 @@
 ﻿using MessageHandler.Contracts;
 using MessageHandler.Exceptions;
-using MessageHandler.Handlers.SingleSideK;
+using MessageHandler.Handlers.SingleSideKHandle;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

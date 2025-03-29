@@ -1,8 +1,10 @@
-﻿namespace Hardware.Printer.Evolis.Contracts
+﻿using CSharpFunctionalExtensions;
+
+namespace Hardware.Printer.Evolis.Contracts
 {
     public interface IPrintYMCKO
     {
-        void Print_SingleSide_YMCKO();
-        void Print_DoubleSide_YMCKO();
+        Result Print_SingleSide_YMCKO(string printerName);
+        Result Print_DoubleSide_YMCKO(string printerName);
     }
 }

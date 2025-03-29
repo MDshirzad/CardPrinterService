@@ -4,14 +4,40 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+    <Content Include="Printer\Evolis\Dll\iomem.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>iomem.dll</Link>
+    </Content>
+    <Content Include="Printer\Evolis\Dll\prn_adapter_2.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>prn_adapter_2.0.dll</Link>
+    </Content>
   </ItemGroup>
 
+
+
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="3.5.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+  </ItemGroup>
+ 
   <ItemGroup>
     <ProjectReference Include="..\Logging\Logging.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="EvoLib">
+      <HintPath>Printer\Evolis\Dll\EvoLib.dll</HintPath>
+    </Reference>
+    <Reference Include="EVOLIS_CLASS">
+      <HintPath>Printer\Evolis\Dll\EVOLIS_CLASS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+ 
 </Project>
