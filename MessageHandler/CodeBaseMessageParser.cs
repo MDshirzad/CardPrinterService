@@ -1,6 +1,7 @@
 ﻿using MessageHandler.Contracts;
 using MessageHandler.Exceptions;
 using MessageHandler.Handlers.SingleSideKHandle;
+using MessageHandler.Handlers.WithRoller.SingleSideKWithRoller;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -43,7 +44,8 @@ namespace MessageHandler
         {
             return code switch
             {
-                "960" => typeof(SingleSideK),
+                "960" => typeof(SingleSideKCommand),
+                "962" => typeof(SingleSideKWithRollerCommand),
 
                 _ => throw new Exception("Invalid Command")
             };
