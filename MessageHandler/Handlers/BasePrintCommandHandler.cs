@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MessageHandler.Handlers
 {
-    internal abstract class BasePrintCommandHandler<T> : ICommandHandler<T> where T : ICommand
+    internal abstract class BasePrintCommandHandler<T> : ICommandHandler<T> where T : BasePrinterCommand
     {
         IPrinter printer;
         protected BasePrintCommandHandler(IPrinter printer)
