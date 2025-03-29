@@ -1,20 +1,18 @@
 ﻿using CSharpFunctionalExtensions;
 using Hardware.Printer.Contracts;
 using MessageHandler.Contracts;
+using MessageHandler.Messages.ResponseMessages;
 
 namespace MessageHandler.Handlers.SingleSideKHandle
 {
-    internal class SingleSideKCommandHandler(IUsbPrinter usbPrinter) : ICommandHandler<SingleSideKCommand>
+    internal class SingleSideKCommandHandler(IPrinter printer) : BasePrintCommandHandler<SingleSideKCommand>(printer)
     {
         public async Task<Result<MessageResult>> Handle(SingleSideKCommand request, CancellationToken cancellationToken)
         {
             Result result = default;
-            if (request.WriteTrack)
-            {
-                result = usbPrinter.WriteMagn(request.PrinterName, request.Track1, request.Track2, request.Track3);
-            }
+            result =await Handle(request,cancellationToken);  
             if (result.IsSuccess)
-                return new MessageResult("");
+                return new MessageResult(FunctionResponse.SuccessResponse);
             return Result.Failure<MessageResult>(result.Error);
         }
     }

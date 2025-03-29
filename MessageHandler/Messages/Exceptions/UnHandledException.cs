@@ -1,4 +1,4 @@
-﻿namespace MessageHandler.Exceptions
+﻿namespace MessageHandler.Messages.Exceptions
 {
     internal class UnHandledException : BaseException
     {

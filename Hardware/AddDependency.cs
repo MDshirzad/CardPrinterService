@@ -8,7 +8,7 @@ namespace Hardware
     {
         public static void AddHardwareServices(this IServiceCollection services)
         {
-            services.AddSingleton<IUsbPrinter, USBEvolisPrinter>();
+            services.AddSingleton<IPrinter, USBEvolisPrinter>();
 
         }
     }

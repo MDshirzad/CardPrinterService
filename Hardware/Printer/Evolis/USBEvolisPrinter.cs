@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
+using Hardware.Printer.Contracts;
 using Hardware.Printer.Evolis.Contracts;
 
 namespace Hardware.Printer.Evolis
 {
-    internal class USBEvolisPrinter : IEvolisUsbPrinter
+    internal class USBEvolisPrinter : IEvolisPrinter, IPrinter
     {
         EVOLIS_CLASS.USB usbPrinter = new EVOLIS_CLASS.USB();
         public Result<string> ExecutePrinterCommand(string printerName, string command)
