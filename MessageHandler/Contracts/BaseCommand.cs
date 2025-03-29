@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MessageHandler.Contracts
+﻿namespace MessageHandler.Contracts
 {
-    internal abstract record BaseCommand:ICommand
+    internal abstract record BaseCommand : ICommand
     {
 
-       
+
     }
 }

@@ -6,6 +6,6 @@ namespace MessageHandler.Contracts
 
     internal interface ICommand : IRequest<Result<MessageResult>>
     {
-       
+
     }
 }

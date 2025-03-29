@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hardware.Printer.Contracts
+﻿namespace Hardware.Printer.Contracts
 {
     public interface IUsbPrinter : IPrinter
     {
