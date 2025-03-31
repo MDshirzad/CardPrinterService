@@ -12,7 +12,7 @@ namespace MessageHandler.Handlers.SingleSideKHandle
             Result result = default;
             result =await Handle(request,cancellationToken);  
             if (result.IsSuccess)
-                return new MessageResult(FunctionResponse.SuccessResponse);
+                return new MessageResult(FunctionResponse.SUCCESSFULL_PRINT_OPERATION);
             return Result.Failure<MessageResult>(result.Error);
         }
     }

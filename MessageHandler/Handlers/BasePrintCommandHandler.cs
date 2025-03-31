@@ -24,7 +24,7 @@ namespace MessageHandler.Handlers
             Result result = default;
             var command = request as BasePrinterCommand;
             
-            if (command!.WriteTrack )
+            if (command!.HasMagn )
             {
                 if (string.IsNullOrEmpty(command.Track1) || string.IsNullOrEmpty(command.Track2) || string.IsNullOrEmpty(command.Track3))
                     return Result.Failure<MessageResult>(FunctionResponse.InvalidTracks);
@@ -32,7 +32,7 @@ namespace MessageHandler.Handlers
                 if (result.IsFailure)
                     return Result.Failure<MessageResult>(result.Error);
             }
-            return   new MessageResult(FunctionResponse.SuccessResponse) ;
+            return   new MessageResult(FunctionResponse.SUCCESSFULL_PRINT_OPERATION) ;
 
         }
     }

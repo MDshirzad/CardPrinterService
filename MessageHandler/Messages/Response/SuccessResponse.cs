@@ -1,12 +1,12 @@
-﻿namespace MessageHandler.Response
+﻿namespace MessageHandler.Messages.Response
 {
     internal class SuccessResponse : BaseResponse
     {
         public object? data { get; set; }
         public SuccessResponse(string InformativeMessage, object? data = null)
         {
-            base.informativeMessage = InformativeMessage;
-            base.isSuccessfull = true;
+            informativeMessage = InformativeMessage;
+            isSuccessfull = true;
             this.data = data;
 
         }

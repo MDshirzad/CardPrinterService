@@ -1,13 +1,13 @@
-﻿namespace MessageHandler.Response
+﻿namespace MessageHandler.Messages.Response
 {
     internal class ErrorResponse : BaseResponse
     {
         public string? errorMessage { get; private set; }
         public ErrorResponse(string Error, string informative = "")
         {
-            base.isSuccessfull = false;
+            isSuccessfull = false;
             errorMessage = Error;
-            base.informativeMessage = informative;
+            informativeMessage = informative;
         }
     }
 }

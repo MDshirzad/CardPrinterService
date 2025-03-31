@@ -1,4 +1,4 @@
-﻿namespace MessageHandler.Response
+﻿namespace MessageHandler.Messages.Response
 {
     internal class BaseResponse
     {

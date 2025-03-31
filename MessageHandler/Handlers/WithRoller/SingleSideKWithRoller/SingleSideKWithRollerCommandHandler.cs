@@ -23,7 +23,7 @@ namespace MessageHandler.Handlers.WithRoller.SingleSideKWithRoller
             {
                 return Result.Failure<MessageResult>(result.Error);
             }
-            return new MessageResult(FunctionResponse.SuccessResponse);
+            return new MessageResult(FunctionResponse.SUCCESS_RESPONSE);
         }
     }
 }
