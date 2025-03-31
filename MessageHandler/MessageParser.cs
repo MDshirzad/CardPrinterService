@@ -1,8 +1,9 @@
 ﻿using CSharpFunctionalExtensions;
 using MediatR;
 using MessageHandler.Contracts;
-using MessageHandler.Messages.Response;
+using MessageHandler.Messages.Api.Response;
  
+
 using Newtonsoft.Json;
 
 namespace MessageHandler

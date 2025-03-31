@@ -1,15 +1,14 @@
-﻿ 
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MessageHandler.Messages.ResponseMessages
+namespace MessageHandler.Messages.Api.Response
 {
     internal class FunctionResponse
     {
-   
+
         internal const string InvalidTracks = "خطای ترک";
 
         internal const string EMPTY_FEEDER = "فیدر خالی از کارت میباشد";
@@ -18,6 +17,6 @@ namespace MessageHandler.Messages.ResponseMessages
         internal const string INVALID_FORMAT = "فرمت نامعتبر";
         internal const string INNER_EXCEPTION = "خطای داخلی";
         internal const string UNHANDLED_MESSAGE = "خطای ناشناخته";
-        internal const string SUCCESS_RESPONSE= "عملیات با موفقیت انجام شد";
+        internal const string SUCCESS_RESPONSE = "عملیات با موفقیت انجام شد";
     }
 }

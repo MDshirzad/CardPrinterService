@@ -1,11 +1,16 @@
 ﻿using MessageHandler.Contracts;
- 
-using MessageHandler.Handlers.SingleSideKHandle;
-using MessageHandler.Handlers.WithRoller.SingleSideKWithRoller;
+using MessageHandler.Handlers.Laser.SimpleLaser;
+using MessageHandler.Handlers.Laser.WithRoller.DoubleSideLaser.WithRibbon.YMCKO.SingleSide;
+using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Back.WithoutRibbon;
+using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithoutRibbon.DoubleSide;
+using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithoutRibbon.SingleSide;
+using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithRibbon.YMCKO.DoubleSide;
+using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithRibbon.YMCKO.SingleSide;
 using MessageHandler.Messages.Exceptions;
+using MessageHandler.RequestHandlers.Info.Printer.ConnectedPrinters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-
+using static MessageHandler.Messages.Api.RequestCodes;
 namespace MessageHandler
 {
     internal class CodeBaseMessageParser : IParser
@@ -45,9 +50,15 @@ namespace MessageHandler
         {
             return code switch
             {
-                "960" => typeof(SingleSideKCommand),
-                "962" => typeof(SingleSideKWithRollerCommand),
-
+                LaserPrint_Code => typeof(LaserPrintCommand),
+                LaserPrintWithRoller_Code => typeof(LaserPrintWithRollerCommand),
+                LaserPrintDoubleSideWithoutRibbonWithRoller => typeof(LaserPrintDoubleSideWithoutRibbon),
+                LaserPrintWithRollerWithSingleSideYmckoRibbon_Code => typeof(LaserPrintWithSingleSideYMCKO),
+                LaserPrintWithRollerWithDoubleSideYmckoRibbon_Code => typeof(LaserPrintWithDoubleSideYmckoCommand),
+                DoubleLaserPrintWithRollerWithSingleSideYmckoRibbon_Code => typeof(DoubleLaserSingleSideYMCKOCommand),
+                DoubleLaserPrintWithRollerWithDoubleSideYmckoRibbon_Code => typeof(DoubleLaserSingleSideYMCKOCommand),
+                BackSideLaserWithRoller_Code=>typeof(BackSideLaserCommand),
+                Printers_Info_Code=>typeof(ConnectedPrintersCommand),
                 _ => throw new Exception("Invalid Command")
             };
 

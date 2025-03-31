@@ -12,6 +12,7 @@
         public string FrontColoredImage { get; set;} = string.Empty;
         public bool HasMagn { get; set; } = true;
         public string extraData { get; set; } = string.Empty;
+        public string ConnectionType { get;set; } = "USB";
     }
 
 }

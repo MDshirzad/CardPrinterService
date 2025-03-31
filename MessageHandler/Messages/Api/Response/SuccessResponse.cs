@@ -1,4 +1,4 @@
-﻿namespace MessageHandler.Messages.Response
+﻿namespace MessageHandler.Messages.Api.Response
 {
     internal class SuccessResponse : BaseResponse
     {

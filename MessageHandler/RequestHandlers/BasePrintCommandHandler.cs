@@ -1,7 +1,7 @@
 ﻿using CSharpFunctionalExtensions;
 using Hardware.Printer.Contracts;
 using MessageHandler.Contracts;
-using MessageHandler.Messages.ResponseMessages;
+using MessageHandler.Messages.Api.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
