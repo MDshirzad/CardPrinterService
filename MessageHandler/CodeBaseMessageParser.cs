@@ -57,8 +57,8 @@ namespace MessageHandler
                 LaserPrintWithRollerWithDoubleSideYmckoRibbon_Code => typeof(LaserPrintWithDoubleSideYmckoCommand),
                 DoubleLaserPrintWithRollerWithSingleSideYmckoRibbon_Code => typeof(DoubleLaserSingleSideYMCKOCommand),
                 DoubleLaserPrintWithRollerWithDoubleSideYmckoRibbon_Code => typeof(DoubleLaserSingleSideYMCKOCommand),
-                BackSideLaserWithRoller_Code=>typeof(BackSideLaserCommand),
-                Printers_Info_Code=>typeof(ConnectedPrintersCommand),
+                BackSideLaserWithRoller_Code => typeof(BackSideLaserCommand),
+                Printers_Info_Code => typeof(ConnectedPrintersCommand),
                 _ => throw new Exception("Invalid Command")
             };
 

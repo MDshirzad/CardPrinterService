@@ -9,10 +9,10 @@
         public string FrontImage { get; set; } = string.Empty;
         public string BackImage { get; set; } = string.Empty;
         public string BackColoredImage { get; set; } = string.Empty;
-        public string FrontColoredImage { get; set;} = string.Empty;
+        public string FrontColoredImage { get; set; } = string.Empty;
         public bool HasMagn { get; set; } = true;
         public string extraData { get; set; } = string.Empty;
-        public string ConnectionType { get;set; } = "USB";
+        public string ConnectionType { get; set; } = "USB";
     }
 
 }
