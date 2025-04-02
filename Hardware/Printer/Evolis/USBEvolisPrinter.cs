@@ -12,50 +12,47 @@ namespace Hardware.Printer.Evolis
             return usbPrinter.RunEvolisCommand(printerName, command);
         }
 
-        public Result Print_DoubleSide_K(string printerName)
+        public Result Print_SingleSide_K(string printerName,string kFile,string oFile)
         {
-            var result = usbPrinter.K_PrintingDoubleSide(printerName, "", "", "");
+            var result = usbPrinter.K_PrintingSingleSide(printerName, kFile, oFile);
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
+        }
+        public Result Print_DoubleSide_K(string printerName,string kFileFrontPath,string kFileBackPath)
+        {
+            var result = usbPrinter.K_PrintingDoubleSide(printerName, kFileFrontPath, kFileBackPath, "k");
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
 
         }
 
-        public Result Print_DoubleSide_KO(string printerName)
+        public Result Print_SingleSide_KO(string printerName, string kFileFront, string OFile)
         {
-            var result = usbPrinter.KO_PrintingDoubleSide(printerName, "", "", "", "");
+            var result = usbPrinter.KO_PrintingSingleSide(printerName, kFileFront, OFile);
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
+        }
+        public Result Print_DoubleSide_KO(string printerName, string kFileFrontPath, string kFileBackPath, string OFile)
+        {
+            var result = usbPrinter.KO_PrintingDoubleSide(printerName, kFileFrontPath, OFile, kFileBackPath, OFile);
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
         }
 
-        public Result Print_DoubleSide_YMCKO(string printerName)
+        public Result Print_DoubleSide_YMCKO(string printerName, string frontColoredFilePath, string frontKFilePath, string backColoredFilePath, string backKFilePath,string OFile)
         {
-            var result = usbPrinter.YMCKO_PrintingDoubleSide(printerName, "", "", "", "", "", "", "");
+            var result = usbPrinter.YMCKO_PrintingDoubleSide(printerName, "ymcko", frontColoredFilePath, frontKFilePath, OFile, backColoredFilePath, backKFilePath, OFile);
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
         }
-
-        public Result Print_SingleSide_K(string printerName)
+        public Result Print_SingleSide_YMCKO(string printerName,string frontKFilePath,string frontColoredPath,string oFilePath)
         {
-            var result = usbPrinter.KO_PrintingSingleSide(printerName, "", "");
-            if (IsSuccess(result))
-                return Result.Success();
-            return Result.Failure(result);
-        }
-
-        public Result Print_SingleSide_KO(string printerName)
-        {
-            var result = usbPrinter.KO_PrintingSingleSide(printerName, "", "");
-            if (IsSuccess(result))
-                return Result.Success();
-            return Result.Failure(result);
-        }
-
-        public Result Print_SingleSide_YMCKO(string printerName)
-        {
-            var result = usbPrinter.YMCKO_PrintingSingleSide(printerName, "", "", "", "");
+            var result = usbPrinter.YMCKO_PrintingSingleSide(printerName, "ymcko", frontColoredPath, frontKFilePath, oFilePath);
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
