@@ -31,6 +31,8 @@ namespace MessageHandler
                     throw new ArgumentNullException();
 
                 var resultMap = jsonObject.ToObject(classType);
+                if (resultMap == null)
+                    throw new ArgumentNullException();
                 return resultMap;
             }
             catch (ArgumentNullException)
