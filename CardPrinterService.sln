@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageHandler", "MessageHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{5EB6279F-6069-4053-BE16-31471FA14DA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "SharedKernel\SharedKernel.csproj", "{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,14 @@ Global
 		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Release|x86.ActiveCfg = Release|Any CPU
 		{5EB6279F-6069-4053-BE16-31471FA14DA5}.Release|x86.Build.0 = Release|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Debug|x86.Build.0 = Debug|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Release|x86.ActiveCfg = Release|Any CPU
+		{A955CA44-04A8-4496-BCF9-8F9B5FCABA73}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
