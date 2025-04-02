@@ -8,10 +8,10 @@ using System.Text;
 
 namespace Hardware.Laser.Jcz
 {
-    internal class LaserHandler : ILaserHandler
+    internal class JczLaserHandler : ILaserHandler
     {
         const string InternalLaserEntityName = "DbLaserObjectName";
-        public LaserHandler()
+        public JczLaserHandler()
         {
             var result = JczWrapper.Initialize(Directory.GetCurrentDirectory(), false);
             if (result != 0)

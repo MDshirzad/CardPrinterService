@@ -14,7 +14,7 @@ namespace Hardware
         {
             services.AddSingleton<IPrinter, USBEvolisPrinter>();
             services.AddSingleton<IRollerHandler, F1ApiHandler>();
-            services.AddSingleton<ILaserHandler, LaserHandler>();
+            services.AddSingleton<ILaserHandler, JczLaserHandler>();
         }
     }
 }
