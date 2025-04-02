@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Utility.Contracts;
+﻿using Utility.Contracts;
 
 namespace Utility
 {
-    internal class PathUtility:IPathUtility
+    internal class PathUtility : IPathUtility
     {
         const string KFrontFileBmp_Path = "k.bmp";
         const string KRearFileBmp_Path = "kB.bmp";
-        
+
         const string OFile_Path = "o.bmp";
         const string FrontColoredFile_Path = "frontColored.bmp";
         const string BackColoredFile_Path = "backColored.bmp";

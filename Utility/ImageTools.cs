@@ -1,19 +1,6 @@
-﻿ 
-using System;
-using System.Collections.Generic;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using static Utility.ImagePixelTool;
-using SharedKernel;
-
-namespace Utility
+﻿namespace Utility
 {
- 
+
     //public static class ImageTools
     //{
 
@@ -226,7 +213,7 @@ namespace Utility
     //            image.Dispose();
     //        }
     //    }
- 
+
 
     //    public static void storeLaserImage(string Base64CardData, bool IsBack, RotateFlipType rotateFlipType = RotateFlipType.Rotate180FlipNone)
     //    {
@@ -290,7 +277,7 @@ namespace Utility
     //    }
 
 
-  
-  
+
+
     //}
 }

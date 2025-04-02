@@ -6,10 +6,10 @@ using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithoutRibb
 using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithoutRibbon.SingleSide;
 using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithRibbon.YMCKO.DoubleSide;
 using MessageHandler.Handlers.Laser.WithRoller.SingleSideLaser.Front.WithRibbon.YMCKO.SingleSide;
-using MessageHandler.Messages.Exceptions;
 using MessageHandler.RequestHandlers.Info.Printer.ConnectedPrinters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using SharedKernel.Exceptions.MessageHandlers;
 using static MessageHandler.Messages.Api.RequestCodes;
 namespace MessageHandler
 {

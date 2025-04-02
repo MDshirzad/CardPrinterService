@@ -12,14 +12,14 @@ namespace Hardware.Printer.Evolis
             return usbPrinter.RunEvolisCommand(printerName, command);
         }
 
-        public Result Print_SingleSide_K(string printerName,string kFile,string oFile)
+        public Result Print_SingleSide_K(string printerName, string kFile, string oFile)
         {
             var result = usbPrinter.K_PrintingSingleSide(printerName, kFile, oFile);
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
         }
-        public Result Print_DoubleSide_K(string printerName,string kFileFrontPath,string kFileBackPath)
+        public Result Print_DoubleSide_K(string printerName, string kFileFrontPath, string kFileBackPath)
         {
             var result = usbPrinter.K_PrintingDoubleSide(printerName, kFileFrontPath, kFileBackPath, "k");
             if (IsSuccess(result))
@@ -43,14 +43,14 @@ namespace Hardware.Printer.Evolis
             return Result.Failure(result);
         }
 
-        public Result Print_DoubleSide_YMCKO(string printerName, string frontColoredFilePath, string frontKFilePath, string backColoredFilePath, string backKFilePath,string OFile)
+        public Result Print_DoubleSide_YMCKO(string printerName, string frontColoredFilePath, string frontKFilePath, string backColoredFilePath, string backKFilePath, string OFile)
         {
             var result = usbPrinter.YMCKO_PrintingDoubleSide(printerName, "ymcko", frontColoredFilePath, frontKFilePath, OFile, backColoredFilePath, backKFilePath, OFile);
             if (IsSuccess(result))
                 return Result.Success();
             return Result.Failure(result);
         }
-        public Result Print_SingleSide_YMCKO(string printerName,string frontKFilePath,string frontColoredPath,string oFilePath)
+        public Result Print_SingleSide_YMCKO(string printerName, string frontKFilePath, string frontColoredPath, string oFilePath)
         {
             var result = usbPrinter.YMCKO_PrintingSingleSide(printerName, "ymcko", frontColoredPath, frontKFilePath, oFilePath);
             if (IsSuccess(result))

@@ -1,6 +1,6 @@
-﻿namespace MessageHandler.Messages.Exceptions
+﻿namespace SharedKernel.Exceptions.MessageHandlers
 {
-    internal class UnHandledException : BaseException
+    public class UnHandledException : BaseException
     {
         const string UnhandledMessage = "UnhandledException";
         public UnHandledException(string message = UnhandledMessage) : base(message)

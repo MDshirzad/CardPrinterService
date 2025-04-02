@@ -28,6 +28,7 @@
  
   <ItemGroup>
     <ProjectReference Include="..\Logging\Logging.csproj" />
+    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +41,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Roller\" />
+    <None Update="F1API.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
  
