@@ -3,6 +3,7 @@ using SharedKernel.Exceptions.Device;
 using static Hardware.Roller.RollerConstants;
 using static Hardware.Roller.F1.F1ApiWrapper;
 using static Hardware.Roller.F1.F1Constants;
+using CSharpFunctionalExtensions;
 namespace Hardware.Roller.F1
 {
     internal class F1ApiHandler : IRollerHandler
@@ -12,20 +13,20 @@ namespace Hardware.Roller.F1
         {
             Connect(1);
         }
-        public bool Capture()
+        public Result Capture()
         {
             var res = F1_Capture(_issuerHandle);
             if (res == 0)
-                return true;
-            return false;
+                return Result.Success();
+            return Result.Failure(res.ToString());
         }
 
-        public bool Eject()
+        public Result Eject()
         {
             var res = F1_Dispense(_issuerHandle, DISP_EJECT_TO_FRONT);
             if (res == 0)
-                return true;
-            return false;
+                return Result.Success();
+            return Result.Failure(res.ToString());
         }
 
         public CardStatus GetStatus()

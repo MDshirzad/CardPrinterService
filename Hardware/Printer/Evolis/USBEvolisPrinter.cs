@@ -4,7 +4,7 @@ using Hardware.Printer.Evolis.Contracts;
 
 namespace Hardware.Printer.Evolis
 {
-    internal class USBEvolisPrinter : IEvolisPrinter, IPrinter
+    internal class USBEvolisPrinter : IEvolisPrinter 
     {
         EVOLIS_CLASS.USB usbPrinter = new EVOLIS_CLASS.USB();
         public Result<string> ExecutePrinterCommand(string printerName, string command)
@@ -82,5 +82,21 @@ namespace Hardware.Printer.Evolis
 
 
         private bool IsSuccess(string result) => result.Equals("ok", StringComparison.CurrentCultureIgnoreCase) || result.Equals("done", StringComparison.CurrentCultureIgnoreCase) ? true : false;
+
+        public Result FlipCard(string printerName)
+        {
+            var result = usbPrinter.RunEvolisCommand(printerName,"Sv;");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
+        }
+
+        public Result EjectCard(string printerName)
+        {
+            var result = usbPrinter.RunEvolisCommand(printerName, "Se;");
+            if (IsSuccess(result))
+                return Result.Success();
+            return Result.Failure(result);
+        }
     }
 }

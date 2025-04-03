@@ -1,11 +1,12 @@
-﻿using static Hardware.Roller.RollerConstants;
+﻿using CSharpFunctionalExtensions;
+using static Hardware.Roller.RollerConstants;
 
 namespace Hardware.Roller
 {
     public interface IRollerHandler
     {
         public CardStatus GetStatus();
-        public bool Eject();
-        public bool Capture();
+        public Result Eject();
+        public Result Capture();
     }
 }
