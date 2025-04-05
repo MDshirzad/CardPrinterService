@@ -7,5 +7,7 @@
         string GetKFrontFileBMPPath();
         string GetKRearFileBMPPath();
         string GetYMCKORearFileBMPPath();
+        string GetLaserFrontFilePath();
+        string GetLaserRearFilePath();
     }
 }

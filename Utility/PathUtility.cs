@@ -6,6 +6,8 @@ namespace Utility
     {
         const string KFrontFileBmp_Path = "k.bmp";
         const string KRearFileBmp_Path = "kB.bmp";
+        const string LaserFrontFile_Path = "l.png";
+        const string LaserRearFile_Path = "lb.png";
 
         const string OFile_Path = "o.bmp";
         const string FrontColoredFile_Path = "frontColored.bmp";
@@ -34,6 +36,21 @@ namespace Utility
             return GetPath(AppContext.BaseDirectory, ImagesBasePrefixDirectory, KRearFileBmp_Path);
         }
         private string GetPath(params string[] paths)
-            => Path.Combine(paths);
+        {
+            string fullPath = Path.Combine(paths);
+            Directory.CreateDirectory(Path.GetDirectoryName(fullPath!)!);
+
+            return Path.Combine(paths);
+        }
+
+        public string GetLaserFrontFilePath()
+        {
+            return GetPath(AppContext.BaseDirectory, ImagesBasePrefixDirectory, LaserFrontFile_Path);
+        }
+
+        public string GetLaserRearFilePath()
+        {
+            return GetPath(AppContext.BaseDirectory, ImagesBasePrefixDirectory, LaserRearFile_Path);
+        }
     }
 }

@@ -1,7 +1,8 @@
-﻿using MessageHandler.Contracts;
+﻿using MediatR;
+using MessageHandler.Contracts;
 
 namespace MessageHandler.RequestHandlers.Info.Printer.ConnectedPrinters
 {
-    internal record ConnectedPrintersCommand : BasePrinterCommand;
+    internal record ConnectedPrintersCommand : ICommand;
 
 }

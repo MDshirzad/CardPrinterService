@@ -24,13 +24,13 @@ namespace MessageHandler.RequestHandlers.EvolisBased.Laser.WithRoller.SingleSide
             
              base.WriteMagnIfNeeded(request, cancellationToken);
             var path = imageUtility.StoreLaserImage(request.FrontImage,false);
-            var coordination = request.extraData.Split(",");
+            
           var   ejectResult = printer.EjectCard(request.PrinterName);
             if (ejectResult.IsSuccess)
             { var status = rollerHandler.GetStatus();
                 if (status == RollerConstants.CardStatus.CardInMiddle)
                 {
-                     var laserEngraveResult = laserHandler.Engrave(path.Value, Convert.ToDouble(coordination[0]), Convert.ToDouble(coordination[1]));
+                     var laserEngraveResult = laserHandler.Engrave(path.Value, request.X, request.Y);
                     if(laserEngraveResult.IsSuccess)
                     {
                         var ejectRollerResult = rollerHandler.Eject();

@@ -28,8 +28,8 @@ namespace MessageHandler.Handlers
                     if (string.IsNullOrEmpty(command.Track1) || string.IsNullOrEmpty(command.Track2) || string.IsNullOrEmpty(command.Track3))
                         throw new Exception("Empty Track Recieved");
                     result = printer.WriteMagn(command.PrinterName, command.Track1, command.Track2, command.Track3);
-                    if (result.IsFailure)
-                        throw new PrinterException(FunctionResponse.InvalidTracks);
+                    if (!result.IsFailure)
+                        throw new PrinterException(result.Error);
                 }
                 
 

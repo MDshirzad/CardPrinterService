@@ -1,4 +1,5 @@
-﻿using MessageHandler.Contracts;
+﻿using MediatR;
+using MessageHandler.Contracts;
 using MessageHandler.RequestHandlers.EvolisBased.Laser.SimpleLaser;
 using MessageHandler.RequestHandlers.EvolisBased.Laser.WithRoller.DoubleSideLaser.WithoutRibbon;
 using MessageHandler.RequestHandlers.EvolisBased.Laser.WithRoller.DoubleSideLaser.WithRibbon.YMCKO.SingleSide;
@@ -10,6 +11,7 @@ using MessageHandler.RequestHandlers.Info.Printer.ConnectedPrinters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SharedKernel.Exceptions.MessageHandlers;
+using System.Reflection;
 using static MessageHandler.Messages.Api.RequestCodes;
 namespace MessageHandler
 {
@@ -21,6 +23,10 @@ namespace MessageHandler
             var code = input.Substring(0, 3);
             input = input.Remove(0, 3);
             var classType = GetTypeByCommand(code);
+            if (IsNonJsonType(code))
+            {
+               return Activator.CreateInstance(classType!)!;
+            }
             if (classType == null)
                 throw new JsonParserException("Invalid Code");
             try
@@ -69,6 +75,19 @@ namespace MessageHandler
             //    .FirstOrDefault(t => t.Name.Equals(className, StringComparison.OrdinalIgnoreCase) && typeof(IRequest).IsAssignableFrom(t));
             //return type;
 
+        }
+
+        bool IsNonJsonType(string code)
+        {
+            List<string> repo = ["100"];
+            if (repo.Contains(code))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
