@@ -3,6 +3,6 @@ using MessageHandler.Contracts;
 
 namespace MessageHandler.RequestHandlers.Info.Printer.ConnectedPrinters
 {
-    internal record ConnectedPrintersCommand : ICommand;
+    internal record ConnectedPrintersCommand : NonJsonRequest;
 
 }

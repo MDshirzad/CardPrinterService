@@ -52,5 +52,10 @@ namespace Utility
         {
             return GetPath(AppContext.BaseDirectory, ImagesBasePrefixDirectory, LaserRearFile_Path);
         }
+
+        public string BaseImagePath()
+        {
+            return GetPath(AppContext.BaseDirectory, ImagesBasePrefixDirectory);
+        }
     }
 }

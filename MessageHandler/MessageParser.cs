@@ -19,7 +19,7 @@ namespace MessageHandler
                 var handledResult = await mediator.Send(pars);
                 var castedFunctionalResult = (Result<MessageResult>)handledResult!;
                 if (castedFunctionalResult.IsFailure)
-                    response = new ErrorResponse(castedFunctionalResult.Error);
+                    response = new ErrorResponse(castedFunctionalResult.Error );
                 
                 else
                     response = new SuccessResponse(castedFunctionalResult.Value.InformativeMessage, castedFunctionalResult.Value.data);

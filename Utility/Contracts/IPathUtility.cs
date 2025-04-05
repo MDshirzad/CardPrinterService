@@ -2,6 +2,7 @@
 {
     public interface IPathUtility
     {
+        string BaseImagePath();
         string GetOFileBMPPath();
         string GetYMCKOFrontFileBMPPath();
         string GetKFrontFileBMPPath();

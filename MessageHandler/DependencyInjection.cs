@@ -1,5 +1,7 @@
 ﻿
+using MediatR;
 using MessageHandler.Contracts;
+using MessageHandler.PipeLine;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MessageHandler
@@ -14,6 +16,7 @@ namespace MessageHandler
             services.AddMediatR(c =>
             {
                 c.RegisterServicesFromAssembly(assembly);
+                c.AddBehavior(typeof(IPipelineBehavior<,>), typeof(FlusherPipeline<,>));
 
             });
 

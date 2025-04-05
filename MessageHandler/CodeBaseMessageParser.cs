@@ -23,7 +23,7 @@ namespace MessageHandler
             var code = input.Substring(0, 3);
             input = input.Remove(0, 3);
             var classType = GetTypeByCommand(code);
-            if (IsNonJsonType(code))
+            if (classType!.BaseType == typeof( NonJsonRequest))
             {
                return Activator.CreateInstance(classType!)!;
             }

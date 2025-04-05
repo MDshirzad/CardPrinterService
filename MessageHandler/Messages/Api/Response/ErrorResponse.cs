@@ -2,12 +2,12 @@
 {
     internal class ErrorResponse : BaseResponse
     {
-        public string? errorMessage { get; private set; }
-        public ErrorResponse(string Error, string informative = "")
+      
+        public ErrorResponse(string InformaiveMessage )
         {
             isSuccessfull = false;
-            errorMessage = Error;
-            informativeMessage = informative;
+            
+            informativeMessage = InformaiveMessage;
         }
     }
 }
